@@ -1,0 +1,21 @@
+<div class="container">
+  <nav class="navigation">
+    <ul class="nav">
+      <li class="navli">
+        <a class="navLink" routerLinkActive="active" routerLink="home">Home</a>
+      </li>
+      <li class="navli">
+        <a class="navLink" routerLinkActive="active" routerLink="cafeInfo">Cafe Info</a>
+      </li>
+    </ul>
+    <div class="dropdown">
+      <button class="dropbtn">Category <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+      <div class="dropdown-content">
+        <a href="#">Restaurant</a>
+        <a href="#">Cafe</a>
+        <a href="#">Breakfast</a>
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

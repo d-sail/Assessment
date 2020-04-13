@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import '~font-awesome/css/font-awesome.css'; */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}

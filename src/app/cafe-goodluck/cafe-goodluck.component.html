@@ -1,0 +1,63 @@
+<div class="container">
+  <!-- *ngFor="let cafeData of cafeGoodluck" -->
+  <header>
+    <h2 class="title">
+      {{ cafeData.name }}, {{ cafeData.area }}, {{ cafeData.city }}
+    </h2>
+  </header>
+  <main class="review-boby">
+    <div class="cafe-img">
+      <img class="img responsive-img" [src]="cafeData['cover-image']" alt="CafeGoodluckImage">
+    </div>
+    <div class="review-rating">
+      <h3 class="title">Review Rating</h3>
+      <div class="rating-votes">
+        <div class="vote-chart">
+          <svg width="60" height="60" viewBox="0 0 60 60">
+            <circle cx="30" cy="30" r="28" stroke-width="4px" style="fill: none; stroke: rgb(221, 221, 221);">
+            </circle>
+            <circle cx="30" cy="30" r="28" stroke-width="4px"
+              style="fill: none; stroke: blue; stroke-linecap: round; stroke-linejoin: round; animation: circle-chart-fill 1s reverse; transform: rotate(-90deg); transform-origin: center center 0px; stroke-dashoffset: 28.1487;"
+              [ngStyle]="{'stroke-dasharray': reviewVoteAvg}">
+            </circle>
+            <text x="50%" y="50%" dy=".3em" text-anchor="middle" style="font-size: 14px; font-weight: 300; fill: blue;">
+              {{ reviewVoteAvg }}
+            </text>
+          </svg>
+          <span class="vote-text"><b>Average Votes</b></span>
+        </div>
+        <div class="total-votes">
+          <span>Total Votes: {{ totalVotes }}</span>
+        </div>
+        <div class="rating-box">
+          <div class="box">
+            {{ reviewRatingAvg }} <i class="fa fa-star-o" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+      <div class="features">
+        <h3 class="title">Feature Rating</h3>
+        <ul class="feature-rating">
+          <li class="f-rating">Place: 
+            <star-rating class="star-rating" [value]="cafeData.feature_rating.place" checkedcolor="	#FFD700" uncheckedcolor="#D3D3D3" size="24px" readonly="false" (rate)="onRate($event)"></star-rating>
+            {{ cafeData.feature_rating.place }}
+          </li>
+          <li class="f-rating">Food:
+            <star-rating class="star-rating" value="4.5" checkedcolor="	#FFD700" uncheckedcolor="#D3D3D3" size="24px" readonly="false" (rate)="onRate($event)"></star-rating>
+            {{ cafeData.feature_rating.food }}
+          </li>
+          <li class="f-rating">Service:
+            <star-rating class="star-rating" value="4.5" checkedcolor="	#FFD700" uncheckedcolor="#D3D3D3" size="24px" readonly="false" (rate)="onRate($event)"></star-rating>
+            {{ cafeData.feature_rating.service }}
+          </li>
+          <li class="f-rating">Staff:
+            <star-rating class="star-rating" value="4.5" checkedcolor="	#FFD700" uncheckedcolor="#D3D3D3" size="24px" readonly="false" (rate)="onRate($event)"></star-rating>
+            {{ cafeData.feature_rating.staff }}</li>
+          <li class="f-rating">Breakfast:
+            <star-rating class="star-rating" [value]="cafeData.feature_rating.breakfast" checkedcolor="	#FFD700" uncheckedcolor="#D3D3D3" size="24px" readonly="false" (rate)="onRate($event)"></star-rating>
+            {{ cafeData.feature_rating.breakfast }}</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</div>
